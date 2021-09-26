@@ -6,6 +6,7 @@ from config import create_api
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
+from time import sleep
 
 
 # class FavRetweetListener(tweepy.StreamListener):
@@ -54,6 +55,7 @@ def like_tweets_now(api, tweets):
                     logger.error("Error on fav", exc_info=True)
             else:
                 logger.info("Has been favorited previously")
+        sleep(100)
 
 
 def main(keywords):
